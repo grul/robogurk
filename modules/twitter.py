@@ -39,7 +39,7 @@ class RoboStreamListener(tweepy.StreamListener):
         screen_name = status.user.screen_name
         tweet_id = status.id_str
 
-        url = 'https://twitter.com/statuses/' + tweet_id
+        url = 'https://twitter.com/' + screen_name + '/statuses/' + tweet_id
         full_text = (user + ' (@' + screen_name + '): ' + text + ' - ' + url)
         self.bot.queue_message(self.channel, full_text)
 
